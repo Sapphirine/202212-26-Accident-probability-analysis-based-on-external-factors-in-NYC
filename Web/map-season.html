@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<script src="./map-season.js"></script>
+
+<style type="text/css">
+  fieldset.inline {
+    display: inline;
+  }
+
+  .margin1 {
+    margin-top: 30px;
+  }
+
+  .margin2 {
+    margin-bottom: 20px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button1 {background-color: #7a7e7a;}
+</style>
+
+<body>
+
+<h1 class="center">NYC seasonal clusters for collisions in each boroughs</h1>
+
+<div class="center margin2">
+  <button onclick="setCenter1()" class="button button1">Overview</button>
+  <button onclick="setCenter2()" class="button button1">Manhattan</button>
+  <button onclick="setCenter3()" class="button button1">Brooklyn</button>
+  <button onclick="setCenter4()" class="button button1">Queens</button>
+  <button onclick="setCenter5()" class="button button1">Bronx</button>
+  <button onclick="setCenter6()" class="button button1">Staten Island</button>
+</div>
+
+
+<div id="googleMap" style="width:100%;height:700px;"></div>
+<!-- <div>
+  <button onclick="addMarker();">Drop Markers</button>
+</div>
+<div>
+  <button onclick="removeMarker();">Remove Markers</button>
+</div> -->
+
+<div class="margin1 center">
+  <fieldset class="inline left">
+    <legend>Manhattan</legend>
+    <div>
+      <input type="checkbox" id="switch1" name="m_1" onclick="check_m_1()">
+      <label for="m_1">Display cluster for Spring</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch2" name="m_2" onclick="check_m_2()">
+      <label for="m_2">Display cluster for Summer</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch3" name="m_3" onclick="check_m_3()">
+      <label for="m_3">Display cluster for Fall</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch4" name="m_4" onclick="check_m_4()">
+      <label for="m_4">Display cluster for Winter</label>
+    </div>
+  </fieldset>
+
+
+  <fieldset class="inline left">
+    <legend>Brooklyn</legend>
+    <div>
+      <input type="checkbox" id="switch5" name="bn_1" onclick="check_bn_1()">
+      <label for="bn_1">Display cluster for Spring</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch6" name="bn_2" onclick="check_bn_2()">
+      <label for="bn_2">Display cluster for Summer</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch7" name="bn_3" onclick="check_bn_3()">
+      <label for="bn_3">Display cluster for Fall</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch8" name="bn_4" onclick="check_bn_4()">
+      <label for="bn_4">Display cluster for Winter</label>
+    </div>
+  </fieldset>
+
+
+  <fieldset class="inline left">
+    <legend>Queens</legend>
+    <div>
+      <input type="checkbox" id="switch9" name="q_1" onclick="check_q_1()">
+      <label for="q_1">Display cluster for Spring</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch10" name="q_2" onclick="check_q_2()">
+      <label for="q_2">Display cluster for Summer</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch11" name="q_3" onclick="check_q_3()">
+      <label for="q_3">Display cluster for Fall</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch12" name="q_4" onclick="check_q_4()">
+      <label for="q_4">Display cluster for Winter</label>
+    </div>
+  </fieldset>
+
+
+  <fieldset class="inline left">
+    <legend>Bronx</legend>
+    <div>
+      <input type="checkbox" id="switch13" name="bx_1" onclick="check_bx_1()">
+      <label for="bx_1">Display cluster for Spring</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch14" name="bx_2" onclick="check_bx_2()">
+      <label for="bx_2">Display cluster for Summer</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch15" name="bx_3" onclick="check_bx_3()">
+      <label for="bx_3">Display cluster for Fall</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch16" name="bx_4" onclick="check_bx_4()">
+      <label for="bx_4">Display cluster for Winter</label>
+    </div>
+  </fieldset>
+
+
+  <fieldset class="inline left">
+    <legend>Staten Island</legend>
+    <div>
+      <input type="checkbox" id="switch17" name="s_1" onclick="check_s_1()">
+      <label for="s_1">Display cluster for Spring</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch18" name="s_2" onclick="check_s_2()">
+      <label for="s_2">Display cluster for Summer</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch19" name="s_3" onclick="check_s_3()">
+      <label for="s_3">Display cluster for Fall</label>
+    </div>
+    <div>
+      <input type="checkbox" id="switch20" name="s_4" onclick="check_s_4()">
+      <label for="s_4">Display cluster for Winter</label>
+    </div>
+  </fieldset>
+</div>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbunagb9V3qzUnQ1rjw7QkHIhwiRddAiY&callback=myMap"></script>
+
+</body>
+</html>

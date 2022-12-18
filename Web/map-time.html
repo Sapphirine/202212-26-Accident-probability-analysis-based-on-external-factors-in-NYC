@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<script src="./map-time.js"></script>
+
+<style type="text/css">
+  fieldset.inline {
+    display: inline;
+  }
+
+  .margin1 {
+    margin-top: 30px;
+  }
+
+  .margin2 {
+    margin-bottom: 20px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button1 {background-color: #7a7e7a;}
+
+
+  .slider {
+    position: absolute;
+    top: 1000px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 60px;
+    padding: 30px;
+    padding-left: 40px;
+    background: #fcfcfc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 15px 40px #7E6D5766;
+  }
+  .slider label {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: Open Sans;
+    padding-left: 10px;
+    color: black;
+    }
+    .slider input[type="range"] {
+    width: 420px;
+    height: 2px;
+    background: black;
+    border: none;
+    outline: none;
+  }
+</style>
+
+<body>
+
+<h1 class="center">NYC hourly clusters for collisions in each boroughs</h1>
+
+<div class="center margin2">
+  <button onclick="setCenter1()" class="button button1">Overview</button>
+  <button onclick="setCenter2()" class="button button1">Manhattan</button>
+  <button onclick="setCenter3()" class="button button1">Brooklyn</button>
+  <button onclick="setCenter4()" class="button button1">Queens</button>
+</div>
+
+
+<div id="googleMap" style="width:100%;height:700px;"></div>
+<!-- <div>
+  <button onclick="addMarker();">Drop Markers</button>
+</div>
+<div>
+  <button onclick="removeMarker();">Remove Markers</button>
+</div> -->
+
+<div class="slider">
+  <label for="fader">Time</label>
+  <input type="range" min="0" max="23" value="11" id="fader" 
+  step="1" list="volsettings" oninput="timer(value)">
+  <datalist id="volsettings">
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+    <option>14</option>
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+    <option>21</option>
+    <option>22</option>
+    <option>23</option>
+  </datalist>
+</div>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbunagb9V3qzUnQ1rjw7QkHIhwiRddAiY&callback=myMap"></script>
+
+</body>
+</html>
